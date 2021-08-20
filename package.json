@@ -1,0 +1,26 @@
+{
+  "name": "api-events",
+  "version": "1.0.0",
+  "description": "Api de eventos para apresentação do projeto final do DevSchool Angular ",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node app/app.ts",
+    "start:dev": "ts-node-dev app/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Higor Rodrigues Soares Silveira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ts-node": "^10.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.6.2"
+  }
+}
