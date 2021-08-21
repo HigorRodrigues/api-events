@@ -5,5 +5,4 @@ export interface Activity{
 	workLoad: number;
 	status: string;
 	startDate: Date;
-
 }

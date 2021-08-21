@@ -43,37 +43,36 @@ export class EventService{
 			id: 1,
 			name: "Evento Teste 1",
 			description: "Teste 1",
-			imageUrl: "imagem",
+			urlImage: "https://storage.googleapis.com/atados-v3/user-uploaded/images/04dc1777-f79c-4f36-b20b-ff38a4781be4.jpg",
 			startDate: new Date(),
 			endDate: new Date(),
-			activities: this.a
+			
 		},
 		{
 			id: 2,
 			name: "Evento Teste 2",
 			description: "Teste 2",
-			imageUrl: "imagem",
+			urlImage: "https://storage.googleapis.com/atados-v3/user-uploaded/images/04dc1777-f79c-4f36-b20b-ff38a4781be4.jpg",
 			startDate: new Date(),
 			endDate: new Date(),
-			activities: this.a
 		},
 		{
 			id: 3,
 			name: "Evento Teste 3",
 			description: "Teste 3",
-			imageUrl: "imagem",
+			urlImage: "https://storage.googleapis.com/atados-v3/user-uploaded/images/04dc1777-f79c-4f36-b20b-ff38a4781be4.jpg",
 			startDate: new Date(),
 			endDate: new Date(),
-			activities: this.a
+			
 		},
 		{
 			id: 4,
 			name: "Evento Teste 4",
 			description: "Teste 4",
-			imageUrl: "imagem",
+			urlImage: "https://storage.googleapis.com/atados-v3/user-uploaded/images/04dc1777-f79c-4f36-b20b-ff38a4781be4.jpg",
 			startDate: new Date(),
 			endDate: new Date(),
-			activities: this.a
+			
 		}
 	];
 

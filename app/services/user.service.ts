@@ -5,17 +5,17 @@ export class UserService{
 	private users: Array<User> = [
 		{
 			id: 1,
-			name: "Higor",
-			email: "higor.italva@gmail.com",
+			name: "Higor Rodrigues",
+			email: "higor@gmail.com",
 			password: "123456",
-			perfil: "ADMIN"
+			profile: "ADMIN"
 		},
 		{
 			id: 2,
 			name: "Maria",
 			email: "maria@gmail.com",
 			password: "123456",
-			perfil: "PARTICIPANTE"
+			profile: "PARTICIPANTE"
 		},
 	];
 
@@ -30,5 +30,9 @@ export class UserService{
 	getAuthenticate(email: string, password: string){
 		return this.users.find( (user) => 
 			user.email === email && user.password === password);
+	}
+
+	addUser(user: User){
+		return this.users.push(user);
 	}
 }
