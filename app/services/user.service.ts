@@ -1,38 +1,32 @@
-import { User } from '../models/user.model';
+import { User } from '../entities/user.entity';
+import { UserRepository } from '../repository/user.repository';
 
 export class UserService{
 
-	private users: Array<User> = [
-		{
-			id: 1,
-			name: "Higor Rodrigues",
-			email: "higor@gmail.com",
-			password: "123456",
-			profile: "ADMIN"
-		},
-		{
-			id: 2,
-			name: "Maria",
-			email: "maria@gmail.com",
-			password: "123456",
-			profile: "PARTICIPANTE"
-		},
-	];
+	private users: Array<User> = [];
 
-	getAll(){
-		return this.users;
+	getUsers(){
+		return UserRepository.getAll();
 	}
 
-	getById(id: number){
-		return this.users.find( u => u.id === Number(id));
-	}
-
-	getAuthenticate(email: string, password: string){
-		return this.users.find( (user) => 
-			user.email === email && user.password === password);
+	getUsersByEmailAndPassword(email: string, password: string){
+		return UserRepository.findByEmailAndPassaword(email, password);
 	}
 
 	addUser(user: User){
-		return this.users.push(user);
+		return UserRepository.create(user);
 	}
+
+	getById(id: number){
+		return UserRepository.findById(id);
+	}
+
+	removeUser(id: number){
+		return UserRepository.delete({id: id});
+	}
+
+	updateUser(id: number, user: User){
+		return UserRepository.update(Number(id), user);
+	}
+	
 }

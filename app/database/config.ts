@@ -1,5 +1,6 @@
 import { createConnection } from "typeorm";
 import { ENTITIES } from "../entities";
+import { User } from "../entities/user.entity";
 
 export const conection = createConnection({
     type: "mysql",
