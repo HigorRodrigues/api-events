@@ -1,4 +1,4 @@
-import { getConnection } from "typeorm";
+import { getConnection, Like } from "typeorm";
 import { Event } from "../entities/event.entity";
 
 export class EventRepository{
@@ -6,6 +6,13 @@ export class EventRepository{
     static getAll(){
         const eventRepository = getConnection().getRepository(Event);
         return eventRepository.find({order: {startDate: 'DESC'}});
+    }
+
+    static findByName(name: string){
+        const eventRepository = getConnection().getRepository(Event);
+        return eventRepository.find({
+            name: Like(`%${name}%`)
+        })
     }
 
     static findById(id: number){

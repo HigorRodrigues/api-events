@@ -22,4 +22,7 @@ export class EventService{
 		return EventRepository.update(Number(id), event);
 	}
 
+	findByName(name: string){
+		return EventRepository.findByName(name);
+	}
 }

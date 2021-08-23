@@ -19,6 +19,14 @@ routes.get('/details/:id', async (req: Request, res: Response) => {
 	res.send(event);
 });
 
+routes.get('/find/:name', async (req: Request, res: Response) => {
+	const name = req.params.name;
+	const event = await eventService.findByName(name);
+	if( !event)
+		res.status(404).send(createMessage("Evento não encontrado!"));
+	res.send(event);
+});
+
 routes.post('/create', async (req: Request, res: Response) => {
 	const event = req.body;	
 	if( !event ){
