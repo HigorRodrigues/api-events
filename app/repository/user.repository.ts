@@ -1,4 +1,4 @@
-import { getConnection } from "typeorm";
+import { getConnection, Like } from "typeorm";
 import { User } from "../entities/user.entity";
 
 
@@ -12,6 +12,13 @@ export class UserRepository{
     static findById(id: number){
         const userRepository = getConnection().getRepository(User);
         return userRepository.findOne(Number(id));
+    }
+
+    static findByName(name: string){
+        const userRepository = getConnection().getRepository(User);
+        return userRepository.find({
+            name: Like(`%${name}%`)
+        })
     }
 
     static findByEmailAndPassaword(email: string, password: string){

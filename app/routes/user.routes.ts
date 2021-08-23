@@ -19,6 +19,14 @@ routes.get('/details/:id', async (req: Request, res: Response) => {
 	res.send(user);
 });
 
+routes.get('/find/:name', async (req: Request, res: Response) => {
+	const name = req.params.name;
+	const user = await userService.findByName(name);
+	if( !user)
+		res.status(404).send(createMessage("Usuário não encontrado!"));
+	res.send(user);
+});
+
 routes.post('/create', async (req: Request, res: Response) => {
 	const user = req.body;	
 	if( !user ){

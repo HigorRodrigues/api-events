@@ -21,6 +21,10 @@ export class UserService{
 		return UserRepository.findById(id);
 	}
 
+	findByName(name: string){
+		return UserRepository.findByName(name);
+	}
+
 	removeUser(id: number){
 		return UserRepository.delete({id: id});
 	}
